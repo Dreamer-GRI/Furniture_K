@@ -75,9 +75,11 @@
     <Compile Include="Classes\Buyer.cs">
       <DependentUpon>FurnitureModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\ConnectHelper.cs" />
     <Compile Include="Classes\Contract.cs">
       <DependentUpon>FurnitureModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Classes\FrameApp.cs" />
     <Compile Include="Classes\FurnitureModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

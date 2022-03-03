@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Furniture_K.Classes; // Использую папку "Classes" для "MainWindow" //
 
 namespace Furniture_K
 {
@@ -23,6 +24,8 @@ namespace Furniture_K
         public MainWindow()
         {
             InitializeComponent();
+            FrameApp.FrameOBJ = MainFrame; // Используем класс Frame в MainWindow //
+            ConnectHelper.FurnitureOBJ = new FurnitureEntities(); // Строка подключения БД для MainWindow //
         }
     }
 }
