@@ -9,19 +9,19 @@
       Title="MainPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Выбирите окно" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+                
+                <Button HorizontalAlignment="Center" Content="Вывести покупателей" Margin="10" Width="200" Cursor="Hand"/>
+                
+                <Button HorizontalAlignment="Center" Content="Вывести договоры" Margin="10" Width="200"/>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+                <Button HorizontalAlignment="Center" Content="Вывести модели мебели" Margin="10" Width="200"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>
