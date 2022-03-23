@@ -29,6 +29,7 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4"/>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4"
+               Source="Pages/MainPage.xaml"/>
     </Grid>
 </Window>
