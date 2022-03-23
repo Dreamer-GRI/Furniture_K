@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Furniture_K.Classes;
 
 namespace Furniture_K.Pages
 {
@@ -23,6 +24,11 @@ namespace Furniture_K.Pages
         public ModelPage()
         {
             InitializeComponent();
+        }
+
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.MainPage());
         }
     }
 }

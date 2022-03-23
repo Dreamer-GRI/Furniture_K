@@ -9,19 +9,15 @@
       Title="ContractPage">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Договоры" HorizontalAlignment="Center" FontSize="50" FontWeight="Bold" Margin="0 0 0 20"/>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-            <ColumnDefinition></ColumnDefinition>
-        </Grid.ColumnDefinitions>
+                <Button x:Name="btnBack" HorizontalAlignment="Center" FontSize="30" Content="Назад" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnBack_Click"/>
+            </StackPanel>
+        </Border>
     </Grid>
 </Page>

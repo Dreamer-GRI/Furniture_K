@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Furniture_K.Classes;
 
 namespace Furniture_K.Pages
 {
@@ -23,6 +24,26 @@ namespace Furniture_K.Pages
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        private void btnShowBuyer_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.BuyerPage());
+        }
+
+        private void btnShowContract_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.ContractPage());
+        }
+
+        private void btnShowModel_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.ModelPage());
+        }
+
+        private void btnShowSale_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.SalePage());
         }
     }
 }
