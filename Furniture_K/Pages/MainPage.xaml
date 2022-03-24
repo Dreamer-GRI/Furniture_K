@@ -16,13 +16,13 @@
             <StackPanel>
                 <TextBlock Text="Выберите окно" HorizontalAlignment="Center" FontSize="50" FontWeight="Bold" Margin="0 0 0 20"/>
                 
-                <Button x:Name="btnShowBuyer" HorizontalAlignment="Center" FontSize="30" Content="Вывести покупателей" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowBuyer_Click"/>
+                <Button x:Name="btnShowBuyer" HorizontalAlignment="Center" FontSize="30" Content="Покупатели" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowBuyer_Click"/>
                 
-                <Button x:Name="btnShowContract" HorizontalAlignment="Center" FontSize="30" Content="Вывести договоры" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowContract_Click"/>
+                <Button x:Name="btnShowContract" HorizontalAlignment="Center" FontSize="30" Content="Договоры" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowContract_Click"/>
 
-                <Button x:Name="btnShowModel" HorizontalAlignment="Center" FontSize="30" Content="Вывести модели мебели" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowModel_Click"/>
+                <Button x:Name="btnShowModel" HorizontalAlignment="Center" FontSize="30" Content="Модели мебели" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowModel_Click"/>
 
-                <Button x:Name="btnShowSale" HorizontalAlignment="Center" FontSize="30" Content="Вывести продажи" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowSale_Click"/>
+                <Button x:Name="btnShowSale" HorizontalAlignment="Center" FontSize="30" Content="Продажи" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowSale_Click"/>
             </StackPanel>
         </Border>
     </Grid>

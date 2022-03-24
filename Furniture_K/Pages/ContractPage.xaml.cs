@@ -30,5 +30,37 @@ namespace Furniture_K.Pages
         {
             FrameApp.FrameOBJ.Navigate(new Pages.MainPage());
         }
+
+         // ////////// //
+        // Фильтрация //
+       // ////////// //
+        private void cmbFilt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+         // ////////// //
+        // Добавление //
+       // ////////// //
+        private void btnAddContract_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+         // //////// //
+        // Удаление //
+       // //////// //
+        private void btnRemoveContract_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+         // ////////////// //
+        // Редактирование //
+       // ////////////// //
+        private void btnEditContract_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

@@ -26,21 +26,33 @@ namespace Furniture_K.Pages
             InitializeComponent();
         }
 
+         // ////////// //
+        // Покупатели //
+       // ////////// //
         private void btnShowBuyer_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new Pages.BuyerPage());
         }
 
+         // //////// //
+        // Договоры //
+       // //////// //
         private void btnShowContract_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new Pages.ContractPage());
         }
 
+         // ///////////// //
+        // Модели мебели //
+       // ///////////// //
         private void btnShowModel_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new Pages.ModelPage());
         }
 
+         // /////// //
+        // Продажи //
+       // /////// //
         private void btnShowSale_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new Pages.SalePage());

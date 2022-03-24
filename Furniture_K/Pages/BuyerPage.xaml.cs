@@ -26,9 +26,44 @@ namespace Furniture_K.Pages
             InitializeComponent();
         }
 
+         // ////////// //
+        // Фильтрация //
+       // ////////// //
+        private void cmbFilt_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+         // ///////////////// //
+        // Возвращене в меню //
+       // ///////////////// //
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new Pages.MainPage());
+        }
+
+         // ///////////////// //
+        // Добавление данных //
+       // ///////////////// //
+        private void btnAddBuyer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+         // /////////////// //
+        // Удаление данных //
+       // /////////////// //
+        private void btnRemoveBuyer_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+         // ///////////////////// //
+        // Редактирование данных //
+       // ///////////////////// //
+        private void btnEditBuyer_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
