@@ -24,6 +24,7 @@ namespace Furniture_K.Pages
         public BuyerPage()
         {
             InitializeComponent();
+            dgBuyer.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.ToList();
         }
 
          // ////////// //

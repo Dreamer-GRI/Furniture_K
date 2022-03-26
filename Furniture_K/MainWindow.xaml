@@ -14,6 +14,16 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
+
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4"
+               Source="Pages/MainPage.xaml"/>
+        
+        <Border Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="5" Margin="0" Background="#ffdadada">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+        </Border>
+
         <Grid.RowDefinitions>
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
@@ -30,7 +40,5 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="4"
-               Source="Pages/MainPage.xaml"/>
     </Grid>
 </Window>
