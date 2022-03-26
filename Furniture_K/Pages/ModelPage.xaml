@@ -9,14 +9,35 @@
       Title="ModelPage">
 
     <Grid>
-        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="550" CornerRadius="20">
+
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="682" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
-            <StackPanel>
-                <TextBlock Text="Модели мебели" HorizontalAlignment="Center" FontSize="50" FontWeight="Bold" Margin="0 0 0 20"/>
 
-                <Button x:Name="btnBack" HorizontalAlignment="Center" FontSize="30" Content="Назад" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnBack_Click"/>
+            <StackPanel>
+
+                <TextBlock Text="Модели мебели" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <Grid>
+                    <Button x:Name="btnAddModel" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="70 10 10 10" Width="150" Height="30" Cursor="Hand" Click="btnAddModel_Click"/>
+                    <Button x:Name="btnRemoveModel" HorizontalAlignment="Center" FontSize="18" Content="Удалить" Margin="0 10 0 10" Width="150" Height="30" Cursor="Hand" Click="btnRemoveModel_Click"/>
+                    <Button x:Name="btnEditModel" HorizontalAlignment="Right" FontSize="18" Content="Редктировать" Margin="10 10 70 10" Width="150" Height="30" Cursor="Hand" Click="btnEditModel_Click"/>
+                </Grid>
+
+                <ComboBox x:Name="cmbFilt" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="5" SelectionChanged="cmbFilt_SelectionChanged"/>
+
+                <DataGrid x:Name="dgModel">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="Название мебели" Binding="{Binding FurnitureName}"  Width="*"/>
+                        <DataGridTextColumn Header="Модель" Binding="{Binding Model}" Width="*"/>
+                        <DataGridTextColumn Header="Цена модели" Binding="{Binding ModelPrice}" Width="*"/>
+                        <DataGridTextColumn Header="Назначение мебели" Binding="{Binding SpecificationsModel.SpecificationsModel}" Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="btnBack" HorizontalAlignment="Center" FontSize="18" Content="Назад" Margin="10" Width="150" Height="30" Cursor="Hand" Click="btnBack_Click"/>
+
             </StackPanel>
         </Border>
     </Grid>

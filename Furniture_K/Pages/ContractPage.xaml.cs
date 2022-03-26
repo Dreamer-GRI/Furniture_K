@@ -26,6 +26,9 @@ namespace Furniture_K.Pages
             InitializeComponent();
         }
 
+         // ///////////////// //
+        // Возвращене в меню //
+       // ///////////////// //
         private void btnBack_Click(object sender, RoutedEventArgs e)
         {
             FrameApp.FrameOBJ.Navigate(new Pages.MainPage());

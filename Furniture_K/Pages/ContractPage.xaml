@@ -27,7 +27,7 @@
 
                 <ComboBox x:Name="cmbFilt" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="5" SelectionChanged="cmbFilt_SelectionChanged"/>
 
-                <DataGrid x:Name="dgBuyer">
+                <DataGrid x:Name="dgContract">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Номер контракта" Binding="{Binding ContractNumber}"  Width="*"/>
                         <DataGridTextColumn Header="Дата регистрации" Binding="{Binding RegistrationDate}" Width="*"/>
