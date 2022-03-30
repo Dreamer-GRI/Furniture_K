@@ -10,7 +10,7 @@
 
     <Grid>
 
-        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="682" CornerRadius="20">
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="900" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
@@ -20,14 +20,13 @@
                 <TextBlock Text="Продажи" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
 
                 <Grid>
-                    <Button x:Name="btnAddSale" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="70 10 10 10" Width="150" Height="30" Cursor="Hand" Click="btnAddSale_Click"/>
-                    <Button x:Name="btnRemoveSale" HorizontalAlignment="Center" FontSize="18" Content="Удалить" Margin="0 10 0 10" Width="150" Height="30" Cursor="Hand" Click="btnRemoveSale_Click"/>
-                    <Button x:Name="btnEditSale" HorizontalAlignment="Right" FontSize="18" Content="Редктировать" Margin="10 10 70 10" Width="150" Height="30" Cursor="Hand" Click="btnEditSale_Click"/>
+                    <Button x:Name="btnAddSale" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="250 10 10 10" Width="158" Height="30" Cursor="Hand" Click="btnAddSale_Click"/>
+                    <Button x:Name="btnEditSale" HorizontalAlignment="Right" FontSize="18" Content="Редактировать" Margin="10 10 250 10" Width="158" Height="30" Cursor="Hand" Click="btnEditSale_Click"/>
                 </Grid>
 
                 <ComboBox x:Name="cmbFilt" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="5" SelectionChanged="cmbFilt_SelectionChanged"/>
 
-                <DataGrid x:Name="dgSale">
+                <DataGrid x:Name="dgSale" AutoGenerateColumns="False" IsReadOnly="True" Height="290">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"  Width="*"/>
                         <DataGridTextColumn Header="Номер договора" Binding="{Binding Contract.ContractNumber}" Width="*"/>

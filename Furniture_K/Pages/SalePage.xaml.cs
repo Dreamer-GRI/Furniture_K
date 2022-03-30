@@ -24,6 +24,7 @@ namespace Furniture_K.Pages
         public SalePage()
         {
             InitializeComponent();
+            dgSale.ItemsSource = ConnectHelper.FurnitureOBJ.Sale.ToList(); // Берёт данные из таблицы "Sale"
         }
 
          // ///////////////// //
@@ -38,14 +39,6 @@ namespace Furniture_K.Pages
         // Добавление //
        // ////////// //
         private void btnAddSale_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-         // //////// //
-        // Удаление //
-       // //////// //
-        private void btnRemoveSale_Click(object sender, RoutedEventArgs e)
         {
 
         }
