@@ -10,7 +10,7 @@
 
     <Grid>
         
-        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="630" CornerRadius="20">
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="900" CornerRadius="20">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
@@ -20,14 +20,13 @@
                 <TextBlock Text="Договоры" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
 
                 <Grid>
-                    <Button x:Name="btnAddContract" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="40 10 10 10" Width="150" Height="30" Cursor="Hand" Click="btnAddContract_Click"/>
-                    <Button x:Name="btnRemoveContract" HorizontalAlignment="Center" FontSize="18" Content="Удалить" Margin="0 10 0 10" Width="150" Height="30" Cursor="Hand" Click="btnRemoveContract_Click"/>
-                    <Button x:Name="btnEditContract" HorizontalAlignment="Right" FontSize="18" Content="Редктировать" Margin="10 10 40 10" Width="150" Height="30" Cursor="Hand" Click="btnEditContract_Click"/>
+                    <Button x:Name="btnAddContract" HorizontalAlignment="Left" FontSize="18" Content="Добавить" Margin="250 10 10 10" Width="158" Height="30" Cursor="Hand" Click="btnAddContract_Click"/>
+                    <Button x:Name="btnEditContract" HorizontalAlignment="Right" FontSize="18" Content="Редактировать" Margin="10 10 250 10" Width="158" Height="30" Cursor="Hand" Click="btnEditContract_Click"/>
                 </Grid>
 
                 <ComboBox x:Name="cmbFilt" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="5" SelectionChanged="cmbFilt_SelectionChanged"/>
 
-                <DataGrid x:Name="dgContract">
+                <DataGrid x:Name="dgContract" AutoGenerateColumns="False" IsReadOnly="True" Height="290">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Номер контракта" Binding="{Binding ContractNumber}"  Width="*"/>
                         <DataGridTextColumn Header="Дата регистрации" Binding="{Binding RegistrationDate}" Width="*"/>

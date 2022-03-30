@@ -24,6 +24,7 @@ namespace Furniture_K.Pages
         public ContractPage()
         {
             InitializeComponent();
+            dgContract.ItemsSource = ConnectHelper.FurnitureOBJ.Contract.ToList(); // Берёт данные из таблицы "Contract"
         }
 
          // ///////////////// //
@@ -49,15 +50,7 @@ namespace Furniture_K.Pages
         {
 
         }
-
-         // //////// //
-        // Удаление //
-       // //////// //
-        private void btnRemoveContract_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+              
          // ////////////// //
         // Редактирование //
        // ////////////// //

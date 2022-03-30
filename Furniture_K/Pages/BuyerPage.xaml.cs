@@ -24,7 +24,7 @@ namespace Furniture_K.Pages
         public BuyerPage()
         {
             InitializeComponent();
-            dgBuyer.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.ToList();
+            dgBuyer.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.ToList(); // Берёт данные из таблицы "Buyer"
         }
 
          // ////////// //
@@ -50,15 +50,7 @@ namespace Furniture_K.Pages
         {
 
         }
-
-         // /////////////// //
-        // Удаление данных //
-       // /////////////// //
-        private void btnRemoveBuyer_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+                 
          // ///////////////////// //
         // Редактирование данных //
        // ///////////////////// //

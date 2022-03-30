@@ -24,6 +24,7 @@ namespace Furniture_K.Pages
         public ModelPage()
         {
             InitializeComponent();
+            dgModel.ItemsSource = ConnectHelper.FurnitureOBJ.Model.ToList(); // Берёт данные из таблицы "Model"
         }
 
          // ///////////////// //
@@ -41,15 +42,7 @@ namespace Furniture_K.Pages
         {
 
         }
-
-         // //////// //
-        // Удаление //
-       // //////// //
-        private void btnRemoveModel_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
+               
          // ////////////// //
         // Редактирование //
        // ////////////// //
