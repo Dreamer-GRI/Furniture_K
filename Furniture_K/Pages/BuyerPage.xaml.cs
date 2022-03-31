@@ -52,7 +52,7 @@ namespace Furniture_K.Pages
        // ///////////////// //
         private void btnAddBuyer_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameApp.FrameOBJ.Navigate(new BuyerAddPage());
         }
                  
          // ///////////////////// //
@@ -60,7 +60,15 @@ namespace Furniture_K.Pages
        // ///////////////////// //
         private void btnEditBuyer_Click(object sender, RoutedEventArgs e)
         {
-
+            Buyer buyer = dgBuyer.SelectedItem as Buyer;
+            if(buyer == null)
+            {
+                MessageBox.Show("Пользователь не выбран");
+            }
+            else
+            {
+                FrameApp.FrameOBJ.Navigate(new BuyerEditPage(buyer)); 
+            }
         }
     }
 }
