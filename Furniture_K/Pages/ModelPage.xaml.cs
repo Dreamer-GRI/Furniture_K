@@ -25,6 +25,9 @@ namespace Furniture_K.Pages
         {
             InitializeComponent();
             dgModel.ItemsSource = ConnectHelper.FurnitureOBJ.Model.ToList(); // Берёт данные из таблицы "Model"
+            cmbFilt.SelectedValuePath = "idSpecificationsModel";
+            cmbFilt.DisplayMemberPath = "SpecificationsModel1";
+            cmbFilt.ItemsSource = ConnectHelper.FurnitureOBJ.SpecificationsModel.ToList();
         }
 
          // ///////////////// //
@@ -56,7 +59,8 @@ namespace Furniture_K.Pages
        // ////////// //
         private void cmbFilt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            int ModelID = (int)cmbFilt.SelectedValue;
+            dgModel.ItemsSource = ConnectHelper.FurnitureOBJ.Model.Where(x => x.idSpecificationsModel == ModelID).ToList();
         }
     }
 }

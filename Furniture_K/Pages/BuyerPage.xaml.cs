@@ -25,6 +25,9 @@ namespace Furniture_K.Pages
         {
             InitializeComponent();
             dgBuyer.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.ToList(); // Берёт данные из таблицы "Buyer"
+            cmbFilt.SelectedValuePath = "idBuyer";
+            cmbFilt.DisplayMemberPath = "Address";
+            cmbFilt.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.ToList();
         }
 
          // ////////// //
@@ -32,7 +35,8 @@ namespace Furniture_K.Pages
        // ////////// //
         private void cmbFilt_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
+            int BuyerID = (int)cmbFilt.SelectedValue;
+            dgBuyer.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.Where(x => x.idBuyer == BuyerID).ToList();
         }
 
          // ///////////////// //

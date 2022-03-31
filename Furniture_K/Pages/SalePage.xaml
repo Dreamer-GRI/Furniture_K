@@ -26,7 +26,7 @@
 
                 <ComboBox x:Name="cmbFilt" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="5" SelectionChanged="cmbFilt_SelectionChanged"/>
 
-                <DataGrid x:Name="dgSale" AutoGenerateColumns="False" IsReadOnly="True" Height="290">
+                <DataGrid x:Name="dgSale" AutoGenerateColumns="False" IsReadOnly="True" Height="270">
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="Количество" Binding="{Binding Quantity}"  Width="*"/>
                         <DataGridTextColumn Header="Номер договора" Binding="{Binding Contract.ContractNumber}" Width="*"/>
