@@ -63,7 +63,7 @@ namespace Furniture_K.Pages
             Buyer buyer = dgBuyer.SelectedItem as Buyer;
             if(buyer == null)
             {
-                MessageBox.Show("Пользователь не выбран");
+                MessageBox.Show("Покупатель не выбран");
             }
             else
             {

@@ -43,7 +43,7 @@ namespace Furniture_K.Pages
        // ////////// //
         private void btnAddModel_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameApp.FrameOBJ.Navigate(new ModelAddPage());
         }
                
          // ////////////// //

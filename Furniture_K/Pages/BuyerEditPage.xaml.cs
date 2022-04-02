@@ -21,10 +21,26 @@ namespace Furniture_K.Pages
     /// </summary>
     public partial class BuyerEditPage : Page
     {
-        public BuyerEditPage(Buyer buyer)
+        public BuyerEditPage(Buyer buyer) // Вписываем название таблицы и задаём новую переменную
         {
             InitializeComponent();
             FIO.Text = buyer.NameBuyer;
+        }
+
+         // //////////////////////////// //
+        // Возвращене в таблицу "Buyer" //
+       // //////////////////////////// //
+        private void btnBack_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.BuyerPage());
+        }
+
+         // ///////////////////// //
+        // Редактирование данных //
+       // ///////////////////// //
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            ConnectHelper.FurnitureOBJ.SaveChanges();
         }
     }
 }

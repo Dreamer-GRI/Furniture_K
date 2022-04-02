@@ -4,11 +4,31 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Furniture_K.Pages"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="576" d:DesignWidth="1080"
       Title="BuyerEditPage">
 
     <Grid>
-        <TextBlock x:Name="FIO"/>
+        
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" MaxWidth="900" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+
+                <TextBlock Text="Редактировать" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <TextBox x:Name="FIO" materialDesign:HintAssist.Hint="ФИО" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
+                <TextBox x:Name="Address" materialDesign:HintAssist.Hint="Адрес" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
+                <TextBox x:Name="Phone" materialDesign:HintAssist.Hint="Номер телефона" Style="{StaticResource MaterialDesignFloatingHintTextBox}" FontSize="20"/>
+
+                <Button x:Name="btnEdit" HorizontalAlignment="Right" FontSize="18" Content="Сохранить" Margin="15" Width="150" Height="30" Cursor="Hand" Click="btnEdit_Click"/>
+                <Button x:Name="btnBack" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" Content="Назад" Margin="0 25 0 0" Width="150" Height="30" Cursor="Hand" Click="btnBack_Click"/>
+
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Page>

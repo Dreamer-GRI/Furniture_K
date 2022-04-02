@@ -52,7 +52,7 @@ namespace Furniture_K.Pages
        // ////////// //
         private void btnAddContract_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameApp.FrameOBJ.Navigate(new ContractAddPage());
         }
               
          // ////////////// //

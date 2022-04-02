@@ -34,9 +34,9 @@ namespace Furniture_K.Pages
             FrameApp.FrameOBJ.Navigate(new Pages.BuyerPage());
         }
 
-        // ///////////////// //
+         // ///////////////// //
         // Добавление данных //
-        // ///////////////// //
+       // ///////////////// //
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             // Проверка на пустое и нулевое значение в полях
