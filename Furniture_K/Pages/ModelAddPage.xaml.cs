@@ -63,7 +63,7 @@ namespace Furniture_K.Pages
                     ModelPrice = decimal.Parse(ModelPrice.Text),
                     idSpecificationsModel = int.Parse(cmbSpecificationsModel.SelectedValue.ToString())
                 };
-                ConnectHelper.FurnitureOBJ.Model.Add(model); // Добавление данных в таблицу "Contract"
+                ConnectHelper.FurnitureOBJ.Model.Add(model); // Добавление данных в таблицу "Model"
                 ConnectHelper.FurnitureOBJ.SaveChanges();
                 MessageBox.Show("Данные успешно добавлены");
                 //}

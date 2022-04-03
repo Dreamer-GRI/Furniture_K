@@ -33,14 +33,10 @@
                     <TextBlock Text="Выберите название мебели" HorizontalAlignment="Left" FontSize="20" Margin="0 15 0 0" Foreground="Gray"/>
                 </Grid>
 
-                <Grid>
-                    <ComboBox x:Name="cmbModelPrice" Width="400" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="130 19 0 0"/>
-                    <TextBlock Text="Выберите цену модели" HorizontalAlignment="Left" FontSize="20" Margin="0 15 0 0" Foreground="Gray"/>
-                </Grid>
+                <Grid/>
 
                 <Button x:Name="btnAdd" HorizontalAlignment="Right" FontSize="18" Content="Добавить" Margin="15" Width="150" Height="30" Cursor="Hand" Click="btnAdd_Click"/>
                 <Button x:Name="btnBack" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="18" Content="Назад" Margin="0 25 0 0" Width="150" Height="30" Cursor="Hand" Click="btnBack_Click"/>
-
 
             </StackPanel>
         </Border>
