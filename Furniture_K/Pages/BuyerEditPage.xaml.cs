@@ -21,10 +21,15 @@ namespace Furniture_K.Pages
     /// </summary>
     public partial class BuyerEditPage : Page
     {
+        private Buyer br = new Buyer();
         public BuyerEditPage(Buyer buyer) // Вписываем название таблицы и задаём новую переменную
         {
             InitializeComponent();
-            FIO.Text = buyer.NameBuyer;
+            br = buyer;
+
+            FIO.Text = br.NameBuyer;
+            Address.Text = br.Address;
+            Phone.Text = br.Phone;
         }
 
          // //////////////////////////// //
@@ -40,7 +45,24 @@ namespace Furniture_K.Pages
        // ///////////////////// //
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            ConnectHelper.FurnitureOBJ.SaveChanges();
+            br.NameBuyer = FIO.Text;
+            br.Address = Address.Text;
+            br.Phone = Phone.Text; 
+
+            if(br.idBuyer == 0)
+            {
+                ConnectHelper.FurnitureOBJ.Buyer.Add(br);
+            }
+
+            try
+            {
+                ConnectHelper.FurnitureOBJ.SaveChanges();
+                MessageBox.Show("Данные успешно изменены");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message.ToString());
+            }
         }
     }
 }

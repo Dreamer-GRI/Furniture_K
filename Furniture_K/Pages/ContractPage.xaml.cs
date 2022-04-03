@@ -60,7 +60,15 @@ namespace Furniture_K.Pages
        // ////////////// //
         private void btnEditContract_Click(object sender, RoutedEventArgs e)
         {
-
+            Contract contract = dgContract.SelectedItem as Contract;
+            if (contract == null)
+            {
+                MessageBox.Show("Договор не выбран");
+            }
+            else
+            {
+                FrameApp.FrameOBJ.Navigate(new ContractEditPage(contract));
+            }
         }
     }
 }

@@ -141,6 +141,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ContractEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ContractPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,11 +157,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ModelEditPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ModelPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\SaleAddPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\SaleEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,6 +191,9 @@
     <Compile Include="Pages\ContractAddPage.xaml.cs">
       <DependentUpon>ContractAddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ContractEditPage.xaml.cs">
+      <DependentUpon>ContractEditPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ContractPage.xaml.cs">
       <DependentUpon>ContractPage.xaml</DependentUpon>
     </Compile>
@@ -188,11 +203,17 @@
     <Compile Include="Pages\ModelAddPage.xaml.cs">
       <DependentUpon>ModelAddPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ModelEditPage.xaml.cs">
+      <DependentUpon>ModelEditPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\ModelPage.xaml.cs">
       <DependentUpon>ModelPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SaleAddPage.xaml.cs">
       <DependentUpon>SaleAddPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\SaleEditPage.xaml.cs">
+      <DependentUpon>SaleEditPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SalePage.xaml.cs">
       <DependentUpon>SalePage.xaml</DependentUpon>

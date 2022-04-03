@@ -51,7 +51,15 @@ namespace Furniture_K.Pages
        // ////////////// //
         private void btnEditSale_Click(object sender, RoutedEventArgs e)
         {
-
+            Sale sale = dgSale.SelectedItem as Sale;
+            if (sale == null)
+            {
+                MessageBox.Show("Продажа не выбрана");
+            }
+            else
+            {
+                FrameApp.FrameOBJ.Navigate(new SaleEditPage(sale));
+            }
         }
 
          // ////////// //

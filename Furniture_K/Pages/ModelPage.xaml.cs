@@ -51,7 +51,15 @@ namespace Furniture_K.Pages
        // ////////////// //
         private void btnEditModel_Click(object sender, RoutedEventArgs e)
         {
-
+            Model model = dgModel.SelectedItem as Model;
+            if (model == null)
+            {
+                MessageBox.Show("Модель мебели не выбрана");
+            }
+            else
+            {
+                FrameApp.FrameOBJ.Navigate(new ModelEditPage(model));
+            }
         }
 
          // ////////// //
