@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Furniture_K"
         mc:Ignorable="d"
-        Title="Учёт продажи офисной мебели" Height="720" Width="1080">
+        Title="Учёт продажи офисной мебели" Height="720" Width="1080" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="/FurnitureIcon.png" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFB89771"/>
@@ -21,6 +21,13 @@
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
             </Border.Effect>
+
+            <StackPanel>
+                <Grid>
+                    <Image Source="/Resources/FurnitureIcon.png" Height="140" Width="140" Margin="5 0 0 0" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Учёт продажи офисной мебели" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="50" Margin="100 0 0 0" FontWeight="Bold"/>
+                </Grid>
+            </StackPanel>
         </Border>
 
         <Grid.RowDefinitions>
