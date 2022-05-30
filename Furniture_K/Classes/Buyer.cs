@@ -18,6 +18,7 @@ namespace Furniture_K.Classes
         public Buyer()
         {
             this.Contract = new HashSet<Contract>();
+            this.Keys = new HashSet<Keys>();
         }
     
         public int idBuyer { get; set; }
@@ -27,5 +28,7 @@ namespace Furniture_K.Classes
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Contract> Contract { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Keys> Keys { get; set; }
     }
 }

@@ -57,5 +57,13 @@ namespace Furniture_K.Pages
         {
             FrameApp.FrameOBJ.Navigate(new Pages.SalePage());
         }
+
+         // /////////// //
+        // Вывод всего //
+       // /////////// //
+        private void btnShowAll_Click(object sender, RoutedEventArgs e)
+        {
+            FrameApp.FrameOBJ.Navigate(new Pages.AllDataPage());
+        }
     }
 }

@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="6eada505b5ad4cfb9689a8a14eaf3868" Name="Diagram1">
+      <Diagram DiagramId="6eada505b5ad4cfb9689a8a14eaf3868" Name="Diagram1" ZoomLevel="64">
         <EntityTypeShape EntityType="FurnitureModel.Buyer" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Contract" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="FurnitureModel.Model" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
@@ -15,7 +15,13 @@
         <AssociationConnector Association="FurnitureModel.FK_Sale_Contract" ManuallyRouted="false" />
         <AssociationConnector Association="FurnitureModel.FK_Model_SpecificationsModel" ManuallyRouted="false" />
         <AssociationConnector Association="FurnitureModel.FK_Sale_Model" ManuallyRouted="false" />
-      </Diagram>
+        <EntityTypeShape EntityType="FurnitureModel.Keys" Width="1.5" PointX="8.5" PointY="2.75" />
+        <AssociationConnector Association="FurnitureModel.FK_Keys_Buyer" />
+        <AssociationConnector Association="FurnitureModel.FK_Keys_Contract" />
+        <AssociationConnector Association="FurnitureModel.FK_Keys_Model" />
+        <AssociationConnector Association="FurnitureModel.FK_Keys_Sale" ></AssociationConnector>
+        <AssociationConnector Association="FurnitureModel.FK_Keys_SpecificationsModel" />
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

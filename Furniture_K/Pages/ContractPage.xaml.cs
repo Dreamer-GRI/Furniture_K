@@ -25,9 +25,9 @@ namespace Furniture_K.Pages
         {
             InitializeComponent();
             dgContract.ItemsSource = ConnectHelper.FurnitureOBJ.Contract.ToList(); // Берёт данные из таблицы "Contract"
-            cmbFilt.SelectedValuePath = "idConttract";
-            cmbFilt.DisplayMemberPath = "DateOfExecution";
-            cmbFilt.ItemsSource = ConnectHelper.FurnitureOBJ.Contract.ToList();
+            cmbFilt.SelectedValuePath = "idBuyer";
+            cmbFilt.DisplayMemberPath = "NameBuyer";
+            cmbFilt.ItemsSource = ConnectHelper.FurnitureOBJ.Buyer.ToList();
         }
 
          // ///////////////// //

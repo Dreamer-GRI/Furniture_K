@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Furniture_K"
         mc:Ignorable="d"
-        Title="Учёт продажи офисной мебели" Height="720" Width="1080" ResizeMode="NoResize" WindowStyle="ThreeDBorderWindow" Icon="/FurnitureIcon.png" WindowStartupLocation="CenterScreen">
+        Title="Учёт продажи офисной мебели" Height="720" Width="1080" WindowStyle="ThreeDBorderWindow" Icon="/FurnitureIcon.png" WindowStartupLocation="CenterScreen">
     <Window.Background>
         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
             <GradientStop Color="#FFB89771"/>

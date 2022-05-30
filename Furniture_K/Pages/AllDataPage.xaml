@@ -1,0 +1,49 @@
+﻿<Page x:Class="Furniture_K.Pages.AllDataPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Furniture_K.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="576" d:DesignWidth="1080"
+      Title="AllDataPage">
+
+    <Grid>
+
+        <Border MinWidth="400" Margin="15" Background="#ffdadada" VerticalAlignment="Center" Padding="30" CornerRadius="20">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="30" Color="LightGray" ShadowDepth="0"/>
+            </Border.Effect>
+
+            <StackPanel>
+
+                <TextBlock Text="Общий вывод" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Margin="0 0 0 20"/>
+
+                <ComboBox x:Name="cmbFilt" Width="350" HorizontalAlignment="Center" VerticalAlignment="Center" Background="#ffff" Margin="5" SelectionChanged="cmbFilt_SelectionChanged"/>
+
+                <DataGrid x:Name="dgAllData" AutoGenerateColumns="False" IsReadOnly="True" Height="270">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ФИО" Binding="{Binding Buyer.NameBuyer}"  Width="*"/>
+                        <DataGridTextColumn Header="Адрес" Binding="{Binding Buyer.Address}" Width="*"/>
+                        <DataGridTextColumn Header="Номер телефона" Binding="{Binding Buyer.Phone}" Width="*"/>
+
+                        <DataGridTextColumn Header="Номер контракта" Binding="{Binding Contract.ContractNumber}"  Width="*"/>
+                        <DataGridTextColumn Header="Дата регистрации" Binding="{Binding Contract.RegistrationDate}" Width="*"/>
+                        <DataGridTextColumn Header="Дата исполнения" Binding="{Binding Contract.DateOfExecution}" Width="*"/>
+
+                        <DataGridTextColumn Header="Название мебели" Binding="{Binding Model.FurnitureName}"  Width="*"/>
+                        <DataGridTextColumn Header="Модель" Binding="{Binding Model.Model1}" Width="*"/>
+                        <DataGridTextColumn Header="Цена модели" Binding="{Binding Model.ModelPrice}" Width="*"/>
+                        <DataGridTextColumn Header="Назначение мебели" Binding="{Binding SpecificationsModel.SpecificationsModel1}" Width="*"/>
+ 
+                        <DataGridTextColumn Header="Количество" Binding="{Binding Sale.Quantity}"  Width="*"/>
+                    </DataGrid.Columns>
+                </DataGrid>
+
+                <Button x:Name="btnBack" HorizontalAlignment="Center" FontSize="18" Content="Назад" Margin="10" Width="150" Height="30" Cursor="Hand" Click="btnBack_Click"/>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+</Page>

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище FurnitureModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище FurnitureModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Buyer">
           <Key>
             <PropertyRef Name="idBuyer" />
@@ -23,6 +23,17 @@
           <Property Name="RegistrationDate" Type="date" Nullable="false" />
           <Property Name="DateOfExecution" Type="date" Nullable="false" />
           <Property Name="idBuyer" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Keys">
+          <Key>
+            <PropertyRef Name="idKeys" />
+          </Key>
+          <Property Name="idKeys" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idBuyer" Type="int" Nullable="false" />
+          <Property Name="idConttract" Type="int" Nullable="false" />
+          <Property Name="idModel" Type="int" Nullable="false" />
+          <Property Name="idSale" Type="int" Nullable="false" />
+          <Property Name="idSpecificationsModel" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Model">
           <Key>
@@ -69,6 +80,66 @@
             </Principal>
             <Dependent Role="Contract">
               <PropertyRef Name="idBuyer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Buyer">
+          <End Role="Buyer" Type="Self.Buyer" Multiplicity="1" />
+          <End Role="Keys" Type="Self.Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buyer">
+              <PropertyRef Name="idBuyer" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idBuyer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Contract">
+          <End Role="Contract" Type="Self.Contract" Multiplicity="1" />
+          <End Role="Keys" Type="Self.Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="idConttract" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idConttract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Model">
+          <End Role="Model" Type="Self.Model" Multiplicity="1" />
+          <End Role="Keys" Type="Self.Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="idModel" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Sale">
+          <End Role="Sale" Type="Self.Sale" Multiplicity="1" />
+          <End Role="Keys" Type="Self.Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="idSale" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idSale" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_SpecificationsModel">
+          <End Role="SpecificationsModel" Type="Self.SpecificationsModel" Multiplicity="1" />
+          <End Role="Keys" Type="Self.Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpecificationsModel">
+              <PropertyRef Name="idSpecificationsModel" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idSpecificationsModel" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -142,6 +213,7 @@
         <EntityContainer Name="Хранилище FurnitureModelContainer">
           <EntitySet Name="Buyer" EntityType="Self.Buyer" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Contract" EntityType="Self.Contract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Keys" EntityType="Self.Keys" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Model" EntityType="Self.Model" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Sale" EntityType="Self.Sale" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SpecificationsModel" EntityType="Self.SpecificationsModel" Schema="dbo" store:Type="Tables" />
@@ -149,6 +221,26 @@
           <AssociationSet Name="FK_Contract_Buyer" Association="Self.FK_Contract_Buyer">
             <End Role="Buyer" EntitySet="Buyer" />
             <End Role="Contract" EntitySet="Contract" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Buyer" Association="Self.FK_Keys_Buyer">
+            <End Role="Buyer" EntitySet="Buyer" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Contract" Association="Self.FK_Keys_Contract">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Model" Association="Self.FK_Keys_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Sale" Association="Self.FK_Keys_Sale">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_SpecificationsModel" Association="Self.FK_Keys_SpecificationsModel">
+            <End Role="SpecificationsModel" EntitySet="SpecificationsModel" />
+            <End Role="Keys" EntitySet="Keys" />
           </AssociationSet>
           <AssociationSet Name="FK_Model_SpecificationsModel" Association="Self.FK_Model_SpecificationsModel">
             <End Role="SpecificationsModel" EntitySet="SpecificationsModel" />
@@ -163,8 +255,7 @@
             <End Role="Sale" EntitySet="Sale" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FurnitureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -177,6 +268,7 @@
           <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Phone" Type="String" MaxLength="38" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Contract" Relationship="Self.FK_Contract_Buyer" FromRole="Buyer" ToRole="Contract" />
+          <NavigationProperty Name="Keys" Relationship="FurnitureModel.FK_Keys_Buyer" FromRole="Buyer" ToRole="Keys" />
         </EntityType>
         <EntityType Name="Contract">
           <Key>
@@ -189,6 +281,7 @@
           <Property Name="idBuyer" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Buyer" Relationship="Self.FK_Contract_Buyer" FromRole="Contract" ToRole="Buyer" />
           <NavigationProperty Name="Sale" Relationship="Self.FK_Sale_Contract" FromRole="Contract" ToRole="Sale" />
+          <NavigationProperty Name="Keys" Relationship="FurnitureModel.FK_Keys_Contract" FromRole="Contract" ToRole="Keys" />
         </EntityType>
         <EntityType Name="Model">
           <Key>
@@ -201,6 +294,7 @@
           <Property Name="idSpecificationsModel" Type="Int32" Nullable="false" />
           <NavigationProperty Name="SpecificationsModel" Relationship="Self.FK_Model_SpecificationsModel" FromRole="Model" ToRole="SpecificationsModel" />
           <NavigationProperty Name="Sale" Relationship="Self.FK_Sale_Model" FromRole="Model" ToRole="Sale" />
+          <NavigationProperty Name="Keys" Relationship="FurnitureModel.FK_Keys_Model" FromRole="Model" ToRole="Keys" />
         </EntityType>
         <EntityType Name="Sale">
           <Key>
@@ -212,6 +306,7 @@
           <Property Name="idModel" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Contract" Relationship="Self.FK_Sale_Contract" FromRole="Sale" ToRole="Contract" />
           <NavigationProperty Name="Model" Relationship="Self.FK_Sale_Model" FromRole="Sale" ToRole="Model" />
+          <NavigationProperty Name="Keys" Relationship="FurnitureModel.FK_Keys_Sale" FromRole="Sale" ToRole="Keys" />
         </EntityType>
         <EntityType Name="SpecificationsModel">
           <Key>
@@ -220,6 +315,7 @@
           <Property Name="idSpecificationsModel" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="SpecificationsModel1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="Model" Relationship="Self.FK_Model_SpecificationsModel" FromRole="SpecificationsModel" ToRole="Model" />
+          <NavigationProperty Name="Keys" Relationship="FurnitureModel.FK_Keys_SpecificationsModel" FromRole="SpecificationsModel" ToRole="Keys" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -332,7 +428,28 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-        </EntityContainer>
+          <EntitySet Name="Keys" EntityType="FurnitureModel.Keys" />
+          <AssociationSet Name="FK_Keys_Buyer" Association="FurnitureModel.FK_Keys_Buyer">
+            <End Role="Buyer" EntitySet="Buyer" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Contract" Association="FurnitureModel.FK_Keys_Contract">
+            <End Role="Contract" EntitySet="Contract" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Model" Association="FurnitureModel.FK_Keys_Model">
+            <End Role="Model" EntitySet="Model" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_Sale" Association="FurnitureModel.FK_Keys_Sale">
+            <End Role="Sale" EntitySet="Sale" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Keys_SpecificationsModel" Association="FurnitureModel.FK_Keys_SpecificationsModel">
+            <End Role="SpecificationsModel" EntitySet="SpecificationsModel" />
+            <End Role="Keys" EntitySet="Keys" />
+          </AssociationSet>
+          </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
           <Property Type="Binary" Name="definition" Nullable="true" />
@@ -344,7 +461,83 @@
           <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
           <Property Type="Int32" Name="OwnerID" Nullable="false" />
         </ComplexType>
-      </Schema>
+        <EntityType Name="Keys">
+          <Key>
+            <PropertyRef Name="idKeys" />
+          </Key>
+          <Property Name="idKeys" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="idBuyer" Type="Int32" Nullable="false" />
+          <Property Name="idConttract" Type="Int32" Nullable="false" />
+          <Property Name="idModel" Type="Int32" Nullable="false" />
+          <Property Name="idSale" Type="Int32" Nullable="false" />
+          <Property Name="idSpecificationsModel" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Buyer" Relationship="FurnitureModel.FK_Keys_Buyer" FromRole="Keys" ToRole="Buyer" />
+          <NavigationProperty Name="Contract" Relationship="FurnitureModel.FK_Keys_Contract" FromRole="Keys" ToRole="Contract" />
+          <NavigationProperty Name="Model" Relationship="FurnitureModel.FK_Keys_Model" FromRole="Keys" ToRole="Model" />
+          <NavigationProperty Name="Sale" Relationship="FurnitureModel.FK_Keys_Sale" FromRole="Keys" ToRole="Sale" />
+          <NavigationProperty Name="SpecificationsModel" Relationship="FurnitureModel.FK_Keys_SpecificationsModel" FromRole="Keys" ToRole="SpecificationsModel" />
+        </EntityType>
+        <Association Name="FK_Keys_Buyer">
+          <End Type="FurnitureModel.Buyer" Role="Buyer" Multiplicity="1" />
+          <End Type="FurnitureModel.Keys" Role="Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Buyer">
+              <PropertyRef Name="idBuyer" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idBuyer" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Contract">
+          <End Type="FurnitureModel.Contract" Role="Contract" Multiplicity="1" />
+          <End Type="FurnitureModel.Keys" Role="Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contract">
+              <PropertyRef Name="idConttract" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idConttract" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Model">
+          <End Type="FurnitureModel.Model" Role="Model" Multiplicity="1" />
+          <End Type="FurnitureModel.Keys" Role="Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Model">
+              <PropertyRef Name="idModel" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_Sale">
+          <End Type="FurnitureModel.Sale" Role="Sale" Multiplicity="1" />
+          <End Type="FurnitureModel.Keys" Role="Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Sale">
+              <PropertyRef Name="idSale" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idSale" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Keys_SpecificationsModel">
+          <End Type="FurnitureModel.SpecificationsModel" Role="SpecificationsModel" Multiplicity="1" />
+          <End Type="FurnitureModel.Keys" Role="Keys" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SpecificationsModel">
+              <PropertyRef Name="idSpecificationsModel" />
+            </Principal>
+            <Dependent Role="Keys">
+              <PropertyRef Name="idSpecificationsModel" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -435,6 +628,18 @@
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище FurnitureModel.sp_renamediagram" />
           <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище FurnitureModel.sp_upgraddiagrams" />
+          <EntitySetMapping Name="Keys">
+            <EntityTypeMapping TypeName="FurnitureModel.Keys">
+              <MappingFragment StoreEntitySet="Keys">
+                <ScalarProperty Name="idSpecificationsModel" ColumnName="idSpecificationsModel" />
+                <ScalarProperty Name="idSale" ColumnName="idSale" />
+                <ScalarProperty Name="idModel" ColumnName="idModel" />
+                <ScalarProperty Name="idConttract" ColumnName="idConttract" />
+                <ScalarProperty Name="idBuyer" ColumnName="idBuyer" />
+                <ScalarProperty Name="idKeys" ColumnName="idKeys" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -18,6 +18,7 @@ namespace Furniture_K.Classes
         public SpecificationsModel()
         {
             this.Model = new HashSet<Model>();
+            this.Keys = new HashSet<Keys>();
         }
     
         public int idSpecificationsModel { get; set; }
@@ -25,5 +26,7 @@ namespace Furniture_K.Classes
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Model> Model { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Keys> Keys { get; set; }
     }
 }

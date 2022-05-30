@@ -23,6 +23,8 @@
                 <Button x:Name="btnShowModel" HorizontalAlignment="Center" FontSize="30" Content="Модели мебели" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowModel_Click"/>
 
                 <Button x:Name="btnShowSale" HorizontalAlignment="Center" FontSize="30" Content="Продажи" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowSale_Click"/>
+
+                <Button x:Name="btnShowAll" HorizontalAlignment="Center" FontSize="30" Content="Вывести все данные" Margin="10" Width="400" Height="50" Cursor="Hand" Click="btnShowAll_Click"/>
             </StackPanel>
         </Border>
     </Grid>

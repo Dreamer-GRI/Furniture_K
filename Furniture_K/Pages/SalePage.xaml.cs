@@ -26,7 +26,7 @@ namespace Furniture_K.Pages
             InitializeComponent();
             dgSale.ItemsSource = ConnectHelper.FurnitureOBJ.Sale.ToList(); // Берёт данные из таблицы "Sale"
             cmbFilt.SelectedValuePath = "idModel";
-            cmbFilt.DisplayMemberPath = "ModelPrice";
+            cmbFilt.DisplayMemberPath = "FurnitureName";
             cmbFilt.ItemsSource = ConnectHelper.FurnitureOBJ.Model.ToList();
         }
 

@@ -33,6 +33,7 @@ namespace Furniture_K.Classes
         public virtual DbSet<Sale> Sale { get; set; }
         public virtual DbSet<SpecificationsModel> SpecificationsModel { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<Keys> Keys { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -12,25 +12,19 @@ namespace Furniture_K.Classes
     using System;
     using System.Collections.Generic;
     
-    public partial class Model
+    public partial class Keys
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Model()
-        {
-            this.Sale = new HashSet<Sale>();
-            this.Keys = new HashSet<Keys>();
-        }
-    
+        public int idKeys { get; set; }
+        public int idBuyer { get; set; }
+        public int idConttract { get; set; }
         public int idModel { get; set; }
-        public string FurnitureName { get; set; }
-        public string Model1 { get; set; }
-        public decimal ModelPrice { get; set; }
+        public int idSale { get; set; }
         public int idSpecificationsModel { get; set; }
     
+        public virtual Buyer Buyer { get; set; }
+        public virtual Contract Contract { get; set; }
+        public virtual Model Model { get; set; }
+        public virtual Sale Sale { get; set; }
         public virtual SpecificationsModel SpecificationsModel { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sale> Sale { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Keys> Keys { get; set; }
     }
 }

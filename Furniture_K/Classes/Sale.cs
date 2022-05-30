@@ -14,6 +14,12 @@ namespace Furniture_K.Classes
     
     public partial class Sale
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Sale()
+        {
+            this.Keys = new HashSet<Keys>();
+        }
+    
         public int idSale { get; set; }
         public int Quantity { get; set; }
         public int idContract { get; set; }
@@ -21,5 +27,7 @@ namespace Furniture_K.Classes
     
         public virtual Contract Contract { get; set; }
         public virtual Model Model { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Keys> Keys { get; set; }
     }
 }
